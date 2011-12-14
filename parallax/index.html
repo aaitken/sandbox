@@ -21,10 +21,12 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <script src="scripts/scaleBg.jquery.js"></script>
-  <script src="scripts/scalefg.jquery.js"></script>
+  <script src="scripts/parallax.jquery.js"></script>
   <script> 
-    //$('.fg').scaleFg();
     $('.bg').scaleBg();
+    $('.bg').bgParallax({speed: 0.05});
+    $('#agave').bgParallax({speed: 0.15});
+    $('#carlos').bgParallax({speed: 0.25});
   </script>
 
 </body>

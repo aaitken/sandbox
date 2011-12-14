@@ -30,7 +30,7 @@
     //Pick up the window ratio and compare it to our image's
     //set image to 100% width or height depending on which will provide full coverage of container
     scale = function(){
-      imgRatio > winRatio() ? that.css('height','100%') : that.css('width','100%');
+      imgRatio > winRatio() ? that.css('height','110%') : that.css('width','110%');
     }
     
     $win.resize(function(){
