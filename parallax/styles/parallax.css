@@ -8,34 +8,41 @@ body{
   height: 100%
 }
 
-div{
-  height: 120%;
+#home{
+  height: 135% /* ...of viewport height */
+}
+
+#home div{
+  height: 100%; /* ...of #home height */
   position: relative;
 }
-  div img{
+  img{
     position: fixed;
   }
-  .bg{
-    display: none
-  }
-  #agave{
-    height: 61.35%;
-    right: 0;
-    top: 48.65%;
-  }
-  #carlos{
-    height: 90.97%;
-    right: 15%;
-    top: 20%; /*to match the 120% container height which will allow for some dedicated parallaxin'*/
-  }
 
-.one{
-  overflow: hidden;
-  background: red
+/* top definitions put bottom of fg images outside container by about 10% */
+#one{
+  background: red;
 }
-.two{
+#one img + img{
+  height: 61.35%; /* ...derived from original slice ratios */
+  right: 0;
+  top: 48.65%;
+}
+#one img + img + img{
+  height: 90.97%;
+  right: 15%;
+  top: 19.03%;
+}
+
+#two{
   background: yellow
 }
-.three{
+#two img{
+  top: 135%
+}
+
+
+#three{
   background: blue
 }

@@ -6,15 +6,16 @@
 </head>
 <body>
   <div id="home">
-    <div class="one">
-      <img src="images/intro-bg.jpg" class="bg" width="1900" height="1229">
-      <img src="images/intro-agave.png" id="agave">
-      <img src="images/intro-carlos.png"id="carlos">
+    <div id="one">
+      <img src="images/intro-bg.jpg" width="1900" height="1229">
+      <img src="images/intro-agave.png"> 
+      <img src="images/intro-carlos.png">
     </div>
-    <div class="two">
-      <img src="images/">
+    <div id="two">
+      <img src="images/step1-bg.jpg" width="1900" height="1229">
+      <img src="images/step1-worker.png">
     </div>
-    <div class="three">
+    <div id="three">
       <img src="images/">
     </div>
   </div>
@@ -23,10 +24,14 @@
   <script src="scripts/scaleBg.jquery.js"></script>
   <script src="scripts/parallax.jquery.js"></script>
   <script> 
-    $('.bg').scaleBg();
-    $('.bg').bgParallax({speed: 0.05});
-    $('#agave').bgParallax({speed: 0.15});
-    $('#carlos').bgParallax({speed: 0.25});
+    $('#one img:eq(0)').scaleBg();
+    $('#one img:eq(0)').bgParallax({speed: 0.05});
+    $('#one img:eq(1)').bgParallax({speed: 0.15});
+    $('#one img:eq(2)').bgParallax({speed: 0.25});
+
+    $('#two img:eq(0)').scaleBg();
+    $('#two img:eq(0)').bgParallax({speed: 1.05});
+    $('#two img:eq(1)').bgParallax({speed: 1.25});
   </script>
 
 </body>
