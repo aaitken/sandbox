@@ -1,6 +1,6 @@
 *{
   padding: 0;
-  margin: 0;
+  margin: 0; 4795884 linda
 }
 
 html,
@@ -9,37 +9,57 @@ body{
 }
 
 #home{
-  height: 135% /* ...of viewport height */
+  height: 120% /* ...of viewport height */
 }
 
 #home div{
   height: 100%; /* ...of #home height */
   position: relative;
+  background-attachment: fixed;
 }
-  img{
-    position: fixed;
-  }
+#one div:nth-child(2),
+#two div:nth-child(2){
+  top: -100%
+}
+#one div:nth-child(3){
+  top: -200%
+}
+
 
 /* top definitions put bottom of fg images outside container by about 10% */
-#one{
-  background: red;
+#one .bg{
+  background-image: url(../images/intro-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-#one img + img{
-  height: 61.35%; /* ...derived from original slice ratios */
-  right: 0;
-  top: 48.65%;
+#one .mg{
+  background-image: url(../images/intro-agave.png);
+  background-size: auto 61.35%; /* ...derived from original slice ratios */
+  background-position: right 200%;
+  background-repeat: no-repeat
 }
-#one img + img + img{
-  height: 90.97%;
-  right: 15%;
-  top: 19.03%;
+#one .fg{
+  background-image: url(../images/intro-carlos.png);
+  background-size: auto 90.79%; /* ...derived from original slice ratios */
+  background-position: 80% 120%;
+  background-repeat: no-repeat
+}
+
+
+#two .bg{
+  background-image: url(../images/step1-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#two .fg{
+  background-image: url(../images/step1-worker.png);
+  background-size: auto 100%; /* ...derived from original slice ratios */
+  background-position: right bottom;
+  background-repeat: no-repeat
 }
 
 #two{
   background: yellow
-}
-#two img{
-  top: 135%
 }
 
 

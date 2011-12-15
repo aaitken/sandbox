@@ -13,8 +13,10 @@
         $scrollEl: $(window) //element whose scroll kicks off the parallax shift
       },
       doParallax, //image position reset function
-      initialCss = this.css('height')/$(window).height(), //percentage that should match css file's
-      initialOffset = this.offset().top, //image element's original offset from document top
+      initialCssPosition = this.css('background-position').match(/\d+/g), //assuming a percent here
+      initialCssSize = this.css('background-size').match(/[\d\.]+/g), //we don't currently set width except for with 'auto', so this will find height %
+      initialY,
+      parent, //container a/g which bg is sized
       $scrollEl, //local cache var
       speed, //local cache var
       $that = this;
@@ -24,32 +26,36 @@
     }
 
     //cache the assignments to avoid repeated lookups
+    parent = config.parent;
     $scrollEl = config.$scrollEl;
-    speed = config.speed;
+    speed = config.speed; 
+    initialY = initialCssSize ? /*((initialCssPosition[1]/100) * */parent.height()/*)*/ - ((initialCssSize/100) * parent.height()) : 0;
     
     doParallax = function(){
       
       // Calculate the movement based on scroll and 'speed', round to 2dp
       var
         arg0 = arguments[0],
-        y =  (initialOffset-(speed*arg0.scrollTop()));
+        y = initialY - (speed*arg0.scrollTop()); 
+
+        //y =  (initialOffset-(speed*arg0.scrollTop()));
 
       // Scroll the background
       arguments[1].css({
-        top: y+"px"
+        'background-position-y': y+'px'
       });
     };
     
     //window resize logic
-    (function(){
-      var to;
-      $(window).resize(function(){
-        clearTimeout(to);
-        to = setTimeout(function(){
-          window.location.reload(false);
-        },500);
-      });
-    }());
+    // (function(){
+      // var to;
+      // $(window).resize(function(){
+        // clearTimeout(to);
+        // to = setTimeout(function(){
+          // window.location.reload(false);
+        // },500);
+      // });
+    // }());
     
     return this.each(function(){
 
