@@ -5,7 +5,7 @@
   // base Version: 3.0.3
   // Forked by: Alex Aitken
 
-  $.fn.bgParallax = function(settings){;
+  $.fn.bgParallax = function(settings){
   
     var 
       config = {
@@ -14,7 +14,6 @@
       },
       doParallax, //image position reset function
       initialCssPosition = this.css('background-position').match(/\d+/g), //assuming a percent here
-      initialCssSize = this.css('background-size').match(/[\d\.]+/g), //we don't currently set width except for with 'auto', so this will find height %
       initialY,
       parent, //container a/g which bg is sized
       $scrollEl, //local cache var
@@ -29,7 +28,8 @@
     parent = config.parent;
     $scrollEl = config.$scrollEl;
     speed = config.speed; 
-    initialY = initialCssSize ? /*((initialCssPosition[1]/100) * */parent.height()/*)*/ - ((initialCssSize/100) * parent.height()) : 0;
+    initialY = initialCssPosition[1];
+
     
     doParallax = function(){
       
@@ -42,7 +42,7 @@
 
       // Scroll the background
       arguments[1].css({
-        'background-position-y': y+'px'
+        'background-position': initialCssPosition[0]+'px '+y+'px'
       });
     };
     

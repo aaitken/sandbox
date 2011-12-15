@@ -21,13 +21,19 @@
   <script src="scripts/scaleBg.jquery.js"></script>
   <script src="scripts/parallax.jquery.js"></script>
   <script> 
+
+  <!-- TODO: pull background-position-y  -->
+    $('#one div:eq(1), #one div:eq(2)').css({'background-position-y': $(this).height() * 0.1 +'px'})
+
     $('#one div:eq(0)').bgParallax({speed: 0.05, parent: $('#one')});
     $('#one div:eq(1)').bgParallax({speed: 0.15, parent: $('#one')});
     $('#one div:eq(2)').bgParallax({speed: 0.25, parent: $('#one')});
 
-    <!-- $('#two img:eq(0)').scaleBg(); -->
-    <!-- $('#two img:eq(0)').bgParallax({speed: 1.05}); -->
-    <!-- $('#two img:eq(1)').bgParallax({speed: 1.25}); -->
+
+    $('#two div:eq(1)').css({'background-position-y': $(this).height() * 0.3 +'px'})
+
+    $('#two div:eq(0)').bgParallax({speed: 0.05, parent: $('#two')});
+    $('#two div:eq(1)').bgParallax({speed: 0.25, parent: $('#two')});
   </script>
 
 </body>

@@ -34,14 +34,14 @@ body{
 }
 #one .mg{
   background-image: url(../images/intro-agave.png);
-  background-size: auto 61.35%; /* ...derived from original slice ratios */
-  background-position: right 200%;
+  background-size: auto 100%; /* ...derived from original slice ratios */
+  background-position: right top;
   background-repeat: no-repeat
 }
 #one .fg{
   background-image: url(../images/intro-carlos.png);
-  background-size: auto 90.79%; /* ...derived from original slice ratios */
-  background-position: 80% 120%;
+  background-size: auto 100%; /* ...derived from original slice ratios */
+  background-position: 80% top;
   background-repeat: no-repeat
 }
 
